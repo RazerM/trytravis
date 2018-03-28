@@ -9,6 +9,7 @@ if [ "$TRAVIS_OS_NAME" = "osx" ]; then
     sudo installer -pkg macpython.pkg -target /
     ls /Library/Frameworks/Python.framework/Versions/*/bin/
     PYTHON_EXE=/Library/Frameworks/Python.framework/Versions/*/bin/python3
+    curl https://bootstrap.pypa.io/get-pip.py | sudo $PYTHON_EXE
     sudo $PYTHON_EXE -m pip install virtualenv
     $PYTHON_EXE -m virtualenv testenv
     source testenv/bin/activate
